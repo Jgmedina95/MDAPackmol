@@ -68,7 +68,7 @@ class PackmolStructure(object):
         # we mangle Resnames to keep track of which molecule is which
         # so copy the true names, change, write out, change back to real
         old_resnames = self.ag.residues.resnames.copy()
-        self.ag.residues.resnames = 'R{}'.format(index)
+        #self.ag.residues.resnames = 'R{}'.format(index)
         with mda.Writer(PACKMOL_STRUCTURE_FILES.format(index)) as w:
             w.write(self.ag)
         self.ag.residues.resnames = old_resnames
